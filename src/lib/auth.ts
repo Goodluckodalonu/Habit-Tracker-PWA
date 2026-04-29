@@ -11,11 +11,11 @@ export type AuthResult =
 
 export function signup(email: string, password: string): AuthResult {
     const users = getUsers();
-    const existing = users.find(
-        (u) => u.email.toLowerCase() === email.toLowerCase()
-    );
-    if (existing) {
-        return { success: false, error: 'User already exists'};
+    const existing = users.find( 
+        (u) => u.email.toLowerCase() === email.toLowerCase() 
+    ); 
+    if (existing) { 
+        return { success: false, error: 'User already exists'}; 
     }
 
     const newUser: User = {
