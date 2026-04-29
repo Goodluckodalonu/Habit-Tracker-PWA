@@ -100,7 +100,7 @@ export default function DashboardPage() {
     if (!session) return null;
 
     return (
-        <div data-testid="dashboard-page" className="min-h-screen bg-gradient-to-br from-slate-50 to-indigo-50">
+        <div className="min-h-screen bg-gradient-to-br from-slate-50 to-indigo-50" data-testid="dashboard-page" >
             {/* Header */} 
             <header className="bg-white border-b border-slate-200 sticky top-0 z-10">
                 <div className="max-w-2xl mx-auto px-4 py-4 flex items-center justify-between">
