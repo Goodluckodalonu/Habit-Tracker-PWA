@@ -94,15 +94,15 @@ export default function DashboardPage() {
 
     function handleLogout() {
         logout();
-        router.replace('/login');
+        router.replace('/login'); 
     }
 
     if (!session) return null;
 
     return (
         <div data-testid="dashboard-page" className="min-h-screen bg-gradient-to-br from-slate-50 to-indigo-50">
-            {/* Header */}
-            <header className="bg-white border-b border-slate-200 sticky top-0 z-10">
+            {/* Header */} 
+            <header className="bg-white border-b border-slate-200 sticky top-0 z-10"> 
                 <div className="max-w-2xl mx-auto px-4 py-4 flex items-center justify-between">
                     <div className="flex items-center gap-2">
                         <h1 className="font-bold text-slate-800 text-lg">Habit Tracker</h1>
@@ -125,7 +125,7 @@ export default function DashboardPage() {
                 {/* Create habit button / form */ }
                 {!showForm && (
                     <button
-                        data-testid="create-habit-button "
+                        data-testid="create-habit-button"
                         onClick={() => setShowForm(true)}
                         className="w-full bg-indigo-600 hover:bg-indigo-700 text-white font-semibold py-3 px-4 rounded-xl transition-colors duration-200 flex items-center justify-center gap-2 shadow-sm"
                     >
