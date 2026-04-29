@@ -122,7 +122,7 @@ export default function DashboardPage() {
 
             {/* Main content */}
             <main className="max-w-2xl mx-auto px-4 py-8 space-y-6">
-                {/* Create habit button / form */}
+                {/* Create habit button / form */ }
                 {!showForm && (
                     <button
                         data-testid="create-habit-button"
@@ -134,7 +134,7 @@ export default function DashboardPage() {
                     </button>
                 )}
 
-                {/* Create form */}
+                {/* Create form  */}
                 {showForm && (
                     <section className="bg-white rounded-2xl border border-slate-200 p-6 shadow-sm">
                         <h2 className="text-lg font-semibold text-slate-800 mb-4">Create a new habit</h2>
