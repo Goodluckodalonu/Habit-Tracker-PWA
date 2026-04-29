@@ -15,7 +15,7 @@ export function signup(email: string, password: string): AuthResult {
         (u) => u.email.toLowerCase() === email.toLowerCase()
     );
     if (existing) {
-        return { success: false, error: 'User already exists' };
+        return { success: false, error: 'User already exists'};
     }
 
     const newUser: User = {
