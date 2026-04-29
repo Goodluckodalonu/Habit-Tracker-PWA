@@ -125,7 +125,7 @@ export default function DashboardPage() {
                 {/* Create habit button / form */ }
                 {!showForm && (
                     <button
-                        data-testid="create-habit-button"
+                        data-testid="create-habit-button "
                         onClick={() => setShowForm(true)}
                         className="w-full bg-indigo-600 hover:bg-indigo-700 text-white font-semibold py-3 px-4 rounded-xl transition-colors duration-200 flex items-center justify-center gap-2 shadow-sm"
                     >
