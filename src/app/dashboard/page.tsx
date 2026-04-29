@@ -123,7 +123,7 @@ export default function DashboardPage() {
             {/* Main content */}
             <main className="max-w-2xl mx-auto px-4 py-8 space-y-6">
                 {/* Create habit button / form */}
-                {!showForm && !editingHabit && (
+                {!showForm && (
                     <button
                         data-testid="create-habit-button"
                         onClick={() => setShowForm(true)}
@@ -145,16 +145,29 @@ export default function DashboardPage() {
                     </section>
                 )}
 
-                {/* Edit form */}
+                {/* Edit modal */}
                 {editingHabit && (
-                    <section className="bg-white rounded-2xl border border-indigo-200 p-6 shadow-sm">
-                        <h2 className="text-lg font-semibold text-slate-800 mb-4">Edit habit</h2>
-                        <HabitForm
-                            initialData={editingHabit}
-                            onSave={handleEditHabit}
-                            onCancel={() => setEditingHabit(null)}
+                    <div
+                        className="fixed inset-0 z-50 flex items-center justify-center p-4"
+                        role="dialog"
+                        aria-modal="true"
+                        aria-label="Edit habit"
+                    >
+                        {/* Backdrop */}
+                        <div
+                            className="absolute inset-0 bg-black/40 backdrop-blur-[2px]"
+                            onClick={() => setEditingHabit(null)}
                         />
-                    </section>
+                        {/* Panel */}
+                        <section className="relative w-full max-w-md bg-white rounded-2xl border border-indigo-200 p-6 shadow-xl animate-in fade-in zoom-in-95 duration-200">
+                            <h2 className="text-lg font-semibold text-slate-800 mb-4">Edit habit</h2>
+                            <HabitForm
+                                initialData={editingHabit}
+                                onSave={handleEditHabit}
+                                onCancel={() => setEditingHabit(null)}
+                            />
+                        </section>
+                    </div>
                 )}
 
                 {/* Habits */}
@@ -176,7 +189,7 @@ export default function DashboardPage() {
                         habits={habits}
                         today={today}
                         onUpdate={handleUpdateHabit}
-                        onEdit={setEditingHabit}
+                        onEdit={(habit) => { setShowForm(false); setEditingHabit(habit); }}
                         onDelete={handleDeleteHabit}
                     />
                 </section>
